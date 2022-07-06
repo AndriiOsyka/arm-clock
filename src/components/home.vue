@@ -3,10 +3,10 @@
     <carousel />
     <info
     :item="info_item[0]"
-    @emitCorrectProduct="emitCorrectProduct" />
+     />
     <info
     :item="info_item[1]"
-    @emitCorrectProduct="emitCorrectProduct" />
+     />
     <video-layout />
     <registration />
   </div>

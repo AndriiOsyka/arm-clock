@@ -1,11 +1,11 @@
 <template>
   <div class="wrap">
-    <header-layout />
+    <header-layout 
+    class="wrap__header"/>
     <div class="body">
       <router-view
-      :info_item="products"
-      @emitCorrectProduct="catchCorrectProduct"
-      :product="productObject" />
+        :info_item="products"
+      />
     </div>
     <footer-layout />
   </div>
@@ -20,9 +20,8 @@ export default{
     HeaderLayout,
     FooterLayout,
   },
-  data(){
+  data() {
     return {
-      correctProduct: '',
       products:[
           {
             name: 'first_product',
@@ -50,7 +49,8 @@ export default{
             },
             h1_style: {
               fontSize: '50px'
-            }
+            },
+            id: 0
           },
           {
             name: 'second_product',
@@ -79,7 +79,8 @@ export default{
             },
             h1_style: {
               fontSize: '20px'
-            }
+            },
+            id: 1
           }
         ]
     }
@@ -90,13 +91,6 @@ export default{
     }  
   },
   computed: {
-    productObject() {
-    return this.products.find((product) => {
-      return product.name === this.correctProduct
-    }
-    )
-    }
-
   }
 
 }
@@ -110,7 +104,17 @@ export default{
   box-sizing: border-box;
 }
 
-.wrap{
+body {
+  background: #000
+}
+
+.wrap__header {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
+.wrap {
   max-width: 1200px;
   margin: 0 auto;
 }
