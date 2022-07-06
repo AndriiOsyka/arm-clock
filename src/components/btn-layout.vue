@@ -1,14 +1,13 @@
 <template>
   <div class="btn-layout">
-    <router-link 
-    to="/product">
-        <button
-        :style="btn_style"
-        @click="emitCorrectProduct"
-        class="btn">
-          {{text}}
-        </button>
-    </router-link>
+    <button
+      :style="btn_style"
+      @click="emitClick"
+      class="btn">
+          
+        {{text}}
+        
+      </button>
   </div>
 </template>
 
@@ -39,8 +38,8 @@ export default{
         }
     },
     methods:{
-      emitCorrectProduct() {
-        this.$emit('emitCorrectProduct', this.product_name)
+      emitClick() {
+        this.$emit('click')
       }
     }
 }

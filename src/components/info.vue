@@ -1,26 +1,38 @@
 <template>
   <div 
-  class="info"
-  :style="item.info_style">
-    <div class="image-block"
-    :style="item.widthImage">
-      <img 
-      :src="require( '../assets/' + item.image )" 
-      alt="ImgGoods"
-      :style="item.image_style"
-      >
-    </div>
+    class="info"
+      :style="item.info_style">
+
+      <div class="image-block"
+        :style="item.widthImage">
+
+          <img 
+            :src="require( '../assets/' + item.image )" 
+            alt="ImgGoods"
+            :style="item.image_style"
+          >
+      </div>
+
     <div class="info-block"
-    :style="item.widthBlock">
+      :style="item.widthBlock">
+
       <h1
-      :style="item.h1_style">{{ item.head }}</h1>
-      <div class="block"></div>
-      <p>{{ item.text }}</p>
-      <btn-layout class="button-in-block"
-      :text="'read more'"
-      :product_name="item.name"
-      :btn_style="item.button_style"
-      @emitCorrectProduct="emitCorrectProduct"
+        :style="item.h1_style">
+
+        {{ item.head }}
+      </h1>
+        <div 
+          class="block">
+        </div>
+        <p>
+          {{ item.text }}
+        </p>
+        <btn-layout 
+          class="button-in-block"
+          :text="'read more'"
+          :product_name="item.name"
+          :btn_style="item.button_style"
+          @click="catchCorrectProduct"
      />
     </div>
   </div>
@@ -30,20 +42,20 @@
 import BtnLayout from "./btn-layout.vue"
 export default{
     components: {
-        BtnLayout
+      BtnLayout
     },
     props: {
-        item: {
-            type: Object,
-            default() {
-                return {}
-            }
+      item: {
+        type: Object,
+        default() {
+          return {}
         }
+      }
     },
     methods:{
-        emitCorrectProduct(data) {
-            this.$emit('emitCorrectProduct', data)
-        }
+      catchCorrectProduct() {
+        this.$router.push({ path: `/products/${this.item.id}` })    
+      }
     }
 
 }

@@ -1,17 +1,17 @@
 <template>
   <div class="product">
-    <h1>{{ product.name }}</h1>
-    <p>{{ product.text }}</p>
+    <h1>{{ product_value.subtitle  }}</h1>
+    <p>{{ product_value.description  }}</p>
   </div>
 </template>
 
 <script>
 export default{
     props: {
-      product: {
+      product_value: {
         type: Object,
         default() {
-            return 'XZ'
+          return {}
         }
       }
     }
