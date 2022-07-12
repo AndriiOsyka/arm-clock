@@ -14,8 +14,8 @@
         </div>
       <nav class="main-head__navigation">
         <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/contacts">Contacts</router-link>
+        <router-link to="/aboutView">About</router-link>
+        <router-link to="/contactsView">Contacts</router-link>
       </nav>
     </header>
   </div>

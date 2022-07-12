@@ -3,7 +3,7 @@
   <div class="product-view">
     <h1></h1>
     <product
-      :product_value="GET_PRODUCTS.find( product => product.id === Number(this.$route.params['id']))" />
+      :product_value="GET_PRODUCTS.find( product => String(product.id) === this.$route.params['id'])" />
   </div>
 
 </template>
@@ -24,8 +24,8 @@ export default {
     computed: {
       ...mapGetters(['GET_PRODUCTS']),
     },
-    mounted() {
-      this.GET_PRODUCTS_FROM_API()
+    async mounted() {
+      await this.GET_PRODUCTS_FROM_API()
     }
 }
 

@@ -30,7 +30,6 @@
         <btn-layout 
           class="button-in-block"
           :text="'read more'"
-          :product_name="item.name"
           :btn_style="item.button_style"
           @click="catchCorrectProduct"
      />
@@ -54,7 +53,7 @@ export default{
     },
     methods:{
       catchCorrectProduct() {
-        this.$router.push({ path: `/products/${this.item.id}` })    
+        this.$router.push({ path: `/product/${this.item.id}` })    
       }
     }
 

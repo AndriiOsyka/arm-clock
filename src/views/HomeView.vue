@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <home 
+      :product_item="info_item"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Home from '../components/home.vue'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    Home
+  },
+  props: {
+    info_item: {
+        type: Array,
+        default() {
+          return []
+        }
+      }
+  },
+  methods: {
+      ...mapMutations(['SET_PRODUCTS'])
+  },
+  mounted() {
+    this.SET_PRODUCTS([])
   }
 }
 </script>

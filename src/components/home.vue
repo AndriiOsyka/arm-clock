@@ -2,10 +2,10 @@
   <div class="home">
     <carousel />
     <info
-    :item="info_item[0]"
+    :item="product_item[0]"
      />
     <info
-    :item="info_item[1]"
+    :item="product_item[1]"
      />
     <video-layout />
     <registration />
@@ -26,7 +26,7 @@ export default{
         Registration
     },
     props: {
-      info_item: {
+      product_item: {
         type: Array,
         default() {
           return []
@@ -36,8 +36,9 @@ export default{
     methods:{
         emitCorrectProduct(data) {
             this.$emit('emitCorrectProduct', data)
-        }
-    }
+        },
+    },
+    
 }
 </script>
 

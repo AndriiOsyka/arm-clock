@@ -1,16 +1,16 @@
 <template>
-  <div class="aboutView">
-    <h1>This is an about page</h1>
-    <about />
+  <div class="contactsView">
+    <h1>Contacts</h1>
+    <contacts />
   </div>
 </template>
 
 <script>
-  import About from '../components/about.vue'
+  import Contacts from '../components/contacts.vue'
   import { mapMutations } from 'vuex'
   export default {
     components: {
-      About,
+      Contacts,
     },
     methods: {
       ...mapMutations(['SET_PRODUCTS'])
