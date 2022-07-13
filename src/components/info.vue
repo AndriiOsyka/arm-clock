@@ -53,7 +53,7 @@ export default{
     },
     methods:{
       catchCorrectProduct() {
-        this.$router.push({ path: `/product/${this.item.id}` })    
+        this.$router.push({ path: `/product/${this.item.id}` })
       }
     }
 

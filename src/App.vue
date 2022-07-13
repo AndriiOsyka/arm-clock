@@ -50,7 +50,7 @@ export default{
             h1_style: {
               fontSize: '50px'
             },
-            id: 21
+            id: '21'
           },
           {
             name: 'second_product',
@@ -80,7 +80,7 @@ export default{
             h1_style: {
               fontSize: '20px'
             },
-            id: 29
+            id: '29'
           }
         ]
     }

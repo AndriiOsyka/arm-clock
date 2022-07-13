@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { onBeforeMount } from 'vue'
 import { mapActions, mapGetters, mapMutations } from 'vuex'
 
 export default{
@@ -24,9 +25,9 @@ export default{
     computed: {
       ...mapGetters(['GET_PRODUCT'])
     },
-    async mounted() {
+    async created() {
       this.SET_PRODUCTS([])
-      await this.GET_PRODUCT_FROM_API(Number(this.$route.params[ 'id' ]))
+      this.GET_PRODUCT_FROM_API(Number(this.$route.params[ 'id' ])) 
     }
 }
 </script>

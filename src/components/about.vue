@@ -25,8 +25,7 @@ import Cart from './cart.vue'
     computed: {
       ...mapGetters(['GET_PRODUCTS']),
     },
-    async mounted() {
-      this.SET_PRODUCTS([])
+    async created() {
       await this.GET_PRODUCTS_FROM_API()
     }
   }

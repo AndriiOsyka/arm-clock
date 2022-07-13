@@ -26,8 +26,8 @@ export default {
   methods: {
       ...mapMutations(['SET_PRODUCTS'])
   },
-  mounted() {
-    this.SET_PRODUCTS([])
+  async mounted() {
+    await this.SET_PRODUCTS([])
   }
 }
 </script>
