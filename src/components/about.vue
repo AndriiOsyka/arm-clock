@@ -15,6 +15,7 @@
 import { mapActions, mapGetters, mapMutations } from 'vuex'
 import Cart from './cart.vue'
   export default {
+    
     components: {
       Cart
     },
