@@ -43,13 +43,13 @@ export default{
     },
     computed:{
       firstImage: function(){
-        return this.image === 'firstImageCar.jpg'?true:false
+        return this.image === 'firstImageCar.jpg' ? true : false
       },
       secondImage: function(){
-        return this.image === 'secondImageCar.jpg'?true:false
+        return this.image === 'secondImageCar.jpg' ? true : false
       },
       thirdImage: function(){
-        return this.image === 'thirdImageCar.jpg'?true:false
+        return this.image === 'thirdImageCar.jpg' ? true : false
       },
     }
 }

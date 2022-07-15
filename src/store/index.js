@@ -2,7 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    products: []
+    products: [],
+    users: []
   },
   getters: {
     GET_PRODUCTS(state) {
@@ -13,6 +14,9 @@ export default createStore({
     },
     GET_PRODUCTS_COUNT(state) {
       return state.products.length
+    },
+    getUsers(state) {
+      return state.users
     }
   },
   mutations: {
@@ -22,6 +26,9 @@ export default createStore({
     { 
       state.products = []  
       state.products.push(product)
+    },
+    SET_USER: (state, user) => {
+      state.users.push(user)
     }
     
   },
