@@ -2,7 +2,6 @@
   <div class="btn-layout">
     <button
       :style="btn_style"
-      @click="emitClick"
       class="btn">
           
         {{text}}

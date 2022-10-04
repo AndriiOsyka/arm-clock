@@ -1,8 +1,7 @@
 <template>
   <div class="registration">
     <div 
-      :class="[ valid ? 'style_valid' : 'style_invalid', 'fields' ]"
-      @click="check_input">
+      :class="[ valid ? 'style_valid' : 'style_invalid', 'fields' ]">
       
       <slot v-if="status === 'disactive'">
         <div class="picture">
@@ -55,37 +54,29 @@ export default {
             valid: false,
         }
     },
+    watch: {
+      userAccount: {
+        handler (val) {
+          this.check_input()
+        },
+        deep: true
+      }
+    },
     methods: {
       ...mapMutations(['SET_USER']),
-      // btnClick() {
-      //   this.check_input()
-      //   if (this.status != 'disactive' && this.valid === true) {
-      //     console.log('start of first function')
-      //     this.status = 'disactive'
-      //     this.SET_USER(this.userAccount)
-      //     this.userAccount = null
-      //     console.log('end of first function')
-      //   }
-      //   else {
-      //     this.status = 'active'
-      //   }
       btnClick() {
         if(this.status === 'active')
         {
-          this.check_input()
           if(this.valid) {
             this.getDisactive()
-            return
           }
-
         }
-        this.getActive()
-        // this.check_input()
-        // this.status != 'disactive' && this.valid  ? this.getDisactive() : this.getActive()
+        else {
+          this.getActive()
+        }
       },
       getDisactive() {
         this.SET_USER(this.userAccount)
-        this.userAccount = null
         this.status = 'disactive'
         this.valid = false
       },
@@ -99,7 +90,7 @@ export default {
         const email_check = regex_email.test(this.userAccount.email.toLowerCase());
         const regex_tel = /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm
         const tel_check = regex_tel.test(this.userAccount.tel.toLowerCase());
-        if (email_check === true && tel_check === true){
+        if (email_check && tel_check){
           this.valid = true
         }
         else {

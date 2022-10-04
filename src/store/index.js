@@ -38,9 +38,7 @@ export default createStore({
       commit('SET_PRODUCTS', productsList)
     },
     async GET_PRODUCT_FROM_API({commit}, id) {
-      console.log('aidamir');
       const product = await ((await fetch(`https://sandbox.musement.com/api/v3/lists/${id}`)).json());
-      console.log('mugu');
       console.log(product);
       commit('SET_PRODUCT', product)
     }
